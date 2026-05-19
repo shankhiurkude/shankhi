@@ -10,6 +10,7 @@
     --navy: #0F172A;
     --blue: #2563EB;
     --purple: #4F46E5;
+    --green-accent: #8cc63f; 
     --text-main: #0F172A;
     --text-muted: #64748B;
     
@@ -24,7 +25,12 @@
     --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; -webkit-font-smoothing: antialiased; }
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    -webkit-font-smoothing: antialiased; 
+}
 
 body {
     font-family: 'Plus Jakarta Sans', sans-serif;
@@ -50,15 +56,21 @@ body {
     border-radius: 50%;
     filter: blur(80px);
     opacity: 0.4;
-    animation: float 20s infinite ease-in-out alternate;
+    animation: float-ambient 20s infinite ease-in-out alternate;
 }
 
 .orb-1 { top: -10%; left: -10%; width: 50vw; height: 50vw; background: var(--blue); }
 .orb-2 { bottom: -20%; right: -10%; width: 60vw; height: 60vw; background: var(--purple); animation-delay: -5s; }
 
-@keyframes float {
+@keyframes float-ambient {
     0% { transform: translate(0, 0) scale(1); }
     100% { transform: translate(10vw, 10vh) scale(1.2); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
 }
 
 /* ==========================================================================
@@ -89,19 +101,20 @@ body {
     letter-spacing: -1px;
     color: var(--navy);
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
 .nav-links { display: flex; gap: 40px; list-style: none; }
 .nav-links a {
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     color: var(--text-main);
     text-decoration: none;
     position: relative;
     padding-bottom: 4px;
 }
 
-/* Smooth Underline Hover */
 .nav-links a::after {
     content: '';
     position: absolute;
@@ -109,7 +122,7 @@ body {
     background: var(--gradient-brand);
     transition: width 0.4s var(--ease-fluid);
 }
-.nav-links a:hover::after { width: 100%; }
+.nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
 
 /* ==========================================================================
    Typography & Buttons
@@ -119,6 +132,7 @@ body {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+    display: inline-block;
 }
 
 .btn-premium {
@@ -153,8 +167,9 @@ body {
 .btn-premium:hover::before { left: 100%; }
 
 /* ==========================================================================
-   Glassmorphism Cards (Global)
+   Cards & Content Blocks
    ========================================================================== */
+/* Restored original light glass for Services & About pages */
 .glass-card {
     background: var(--glass-bg);
     backdrop-filter: blur(24px);
@@ -167,103 +182,188 @@ body {
     perspective: 1000px;
 }
 
+/* Dedicated class for the Midnight Purple boxes */
+.glass-card-dark {
+    background: rgba(15, 5, 30, 0.95); 
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-radius: 24px;
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+    transition: all 0.5s var(--ease-fluid);
+}
+
+/* Automatically forces text to be white/light-slate inside dark cards */
+.glass-card-dark h2, .glass-card-dark h3, .glass-card-dark h4 {
+    color: #ffffff !important;
+}
+
+.glass-card-dark p, .glass-card-dark ul, .glass-card-dark li {
+    color: #e2e8f0 !important;
+}
+
+.ref-card {
+    transition: all 0.3s ease;
+}
+.ref-card:hover {
+    transform: translateX(10px);
+    background: #ffffff !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    border-color: var(--green-accent) !important;
+}
+
 /* ==========================================================================
-   Orbital / Circular Layout System (Home & Services)
+   Orbital / Circular Layout System (Enhanced Premium Look)
    ========================================================================== */
 .orbital-wrapper {
     position: relative;
     width: 100%;
-    height: 80vh;
+    height: 60vh; 
+    min-height: 650px; 
+    margin-bottom: 0px; 
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
+/* 1. Enhanced Center Text with a soft backdrop glow */
 .orbital-center {
     position: absolute;
     width: 300px;
     text-align: center;
     z-index: 10;
+    /* Soft white radial glow behind the text to make it pop */
+    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0) 70%);
+    padding: 40px;
+    border-radius: 50%;
 }
 
+.orbital-center h3, .orbital-center h2 {
+    background: var(--gradient-brand);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800;
+    /* Added a subtle text glow */
+    text-shadow: 0 10px 30px rgba(79, 70, 229, 0.2); 
+}
+
+/* 2. Enhanced Orbital Path with glow and elegant slow rotation */
 .orbital-path {
     position: absolute;
     width: 60vw; height: 60vw;
-    border: 1px dashed rgba(15, 23, 42, 0.1);
+    max-width: 800px; 
+    max-height: 800px;
+    /* Purple tinted dashes instead of plain gray */
+    border: 2px dashed rgba(139, 92, 246, 0.4);
     border-radius: 50%;
     pointer-events: none;
+    /* Ambient inner and outer ring glow */
+    box-shadow: 0 0 60px rgba(139, 92, 246, 0.1), inset 0 0 60px rgba(37, 99, 235, 0.1);
+    /* Very slow 2-minute rotation so it feels alive but not distracting */
+    animation: spin-orbit 120s linear infinite;
 }
 
+@keyframes spin-orbit {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 3. Enhanced Cards with colored premium shadows and lift effect */
 .orbit-card {
     position: absolute;
     top: 50%; left: 50%;
-    width: 280px;
-    margin: -100px 0 0 -140px; /* Centering offset */
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(15px);
+    width: 220px !important; 
+    margin: -110px 0 0 -110px; 
+    background: rgba(255, 255, 255, 0.85); /* Slightly more opaque glass */
+    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 20px;
-    padding: 24px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-    /* JS will handle transform: rotate(Xdeg) translateX(Ypx) rotate(-Xdeg) */
-    transition: filter 0.3s, transform 0.1s linear;
+    /* Replaced flat gray shadow with a deep blue/purple shadow */
+    box-shadow: 0 20px 40px rgba(79, 70, 229, 0.12), 0 0 0 1px rgba(139, 92, 246, 0.1);
+    transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
+    overflow: hidden;
 }
 
 .orbit-card:hover {
-    filter: brightness(1.05);
-    z-index: 100;
+    z-index: 999 !important; 
+    /* Lifts the card up and slightly scales it */
+    transform: scale(1.05) translateY(-10px); 
+    filter: brightness(1.02);
+    /* Intensifies the colored shadow on hover */
+    box-shadow: 0 30px 60px rgba(79, 70, 229, 0.25), 0 0 0 2px rgba(139, 92, 246, 0.3);
 }
 
 /* ==========================================================================
-   Services Page: Left Circular Menu + Right Content
+   Why Choose Us Section
    ========================================================================== */
-.services-split {
-    display: grid;
-    grid-template-columns: 400px 1fr;
-    height: 100vh;
-    padding-top: 100px;
+.why-choose-us-final {
+    max-width: 100% !important; 
+    width: 100%;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-top: 0px !important; 
 }
 
-.circular-nav {
-    position: relative;
-    height: 100%;
-    /* Creates a curved mask on the left side */
-    display: flex;
-    align-items: center;
+.why-choose-us-final > div {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
 }
 
-.circular-nav-item {
-    position: absolute;
-    right: 50px;
-    transition: all 0.5s var(--ease-fluid);
-    opacity: 0.5;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 1.1rem;
+/* ==========================================================================
+   About Page Layouts & Mobile Adjustments
+   ========================================================================== */
+@media (max-width: 991px) {
+    .about-split {
+        grid-template-columns: 1fr !important;
+        gap: 30px !important;
+    }
+    
+    .about-split > div.reveal {
+        position: static !important;
+        text-align: center;
+    }
+    
+    .about-split h2 {
+        font-size: 2.8rem !important;
+    }
+
+    .mv-card {
+        grid-template-columns: 1fr !important;
+    }
+
+    .mv-card > div:first-child {
+        min-height: 250px !important;
+    }
+    
+    .mv-card > div:last-child {
+        padding: 40px 30px !important;
+        text-align: center;
+    }
+
+    .commitments-grid {
+        grid-template-columns: 1fr !important;
+        gap: 50px !important;
+    }
+
+    .commitments-grid > div:first-child {
+        height: 350px !important;
+    }
 }
 
-.circular-nav-item.active {
-    opacity: 1;
-    color: var(--blue);
-    font-size: 1.4rem;
-    transform: scale(1.1);
-}
-
-.content-panel {
-    padding: 100px 5vw;
-    overflow-y: auto;
-}
-
-/* Entry Transitions */
+/* ==========================================================================
+   Global Animations (REDUCED & SUBTLE)
+   ========================================================================== */
 .reveal {
     opacity: 0;
-    transform: translateY(40px) scale(0.95);
-    transition: all 0.8s var(--ease-fluid);
+    transform: translateY(15px); /* Reduced for smoother, stable feel */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
 .reveal.active {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
 }
 
 /* ==========================================================================
@@ -301,4 +401,238 @@ body {
 
 .retention-modal.show .retention-content {
     transform: translateY(0) scale(1);
+}
+
+/* ==========================================================================
+   Mobile Responsive Adjustments
+   ========================================================================== */
+@media (max-width: 991px) {
+    .hero .container {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+    }
+    .hero-image-wrap {
+        order: -1; 
+        margin-bottom: 40px;
+    }
+    .hero-image-wrap div {
+        width: 280px !important;
+        height: 280px !important;
+    }
+
+    .why-choose-us-final > div {
+        flex-direction: column !important;
+        align-items: center !important;
+    }
+    .why-choose-us-final .reveal {
+        text-align: center !important;
+    }
+    .why-choose-us-final h2 {
+        font-size: 2.5rem !important;
+    }
+    
+    .nav-links {
+        gap: 20px;
+    }
+}
+
+/* ==========================================================================
+   Contact Page Styles (Forms & Cards)
+   ========================================================================== */
+.contact-card p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-card p strong {
+    color: var(--navy);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+    opacity: 0.7;
+}
+
+.contact-card a {
+    color: var(--blue);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-card a:hover {
+    color: var(--purple);
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--navy);
+    margin-bottom: 8px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    border-radius: 8px;
+    padding: 14px 16px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-main);
+    transition: all 0.3s ease;
+}
+
+.form-group input::placeholder, 
+.form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--blue);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+@media (max-width: 768px) {
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+/* ==========================================================================
+   Purple Inquiry Form Box (Contact Page)
+   ========================================================================== */
+.purple-form-box {
+    background: rgba(30, 15, 50, 0.85) !important; 
+    border: 1px solid rgba(139, 92, 246, 0.3) !important;
+    box-shadow: 0 15px 40px rgba(79, 70, 229, 0.15) !important;
+}
+
+.purple-form-box .form-group label {
+    color: #e2e8f0;
+}
+
+.purple-form-box .form-group input, 
+.purple-form-box .form-group textarea {
+    background: rgba(15, 5, 30, 0.6);
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    color: #ffffff;
+}
+
+.purple-form-box .form-group input::placeholder, 
+.purple-form-box .form-group textarea::placeholder {
+    color: #94a3b8;
+}
+
+.purple-form-box .form-group input:focus, 
+.purple-form-box .form-group textarea:focus {
+    border-color: #a855f7;
+    background: rgba(30, 15, 50, 0.9);
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15);
+}
+
+.purple-form-box .btn-premium {
+    background: linear-gradient(135deg, #9333ea 0%, #4f46e5 100%) !important;
+    color: #ffffff !important;
+    box-shadow: 0 10px 20px rgba(147, 51, 234, 0.3) !important;
+    border: none;
+}
+
+.purple-form-box .btn-premium:hover {
+    box-shadow: 0 15px 30px rgba(147, 51, 234, 0.5) !important;
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* ==========================================================================
+   Services Page Enhancements (Sidebar & Feature Cards)
+   ========================================================================== */
+.sidebar-link {
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 600;
+    display: block;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: all 0.3s var(--ease-fluid);
+    border-left: 3px solid transparent;
+}
+
+.sidebar-link:hover, .sidebar-link:focus {
+    color: var(--purple);
+    background-color: rgba(79, 70, 229, 0.05); 
+    border-left: 3px solid var(--purple); 
+    transform: translateX(5px);
+}
+
+/* Purple Service Feature Cards (Inside Boxes) */
+.service-feature-card {
+    background: rgba(30, 15, 50, 0.9) !important; 
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 16px;
+    border: 1px solid rgba(139, 92, 246, 0.3) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.service-feature-card:hover {
+    transform: translateY(-5px);
+    background: rgba(45, 20, 75, 0.95) !important;
+}
+
+.service-feature-card h4 {
+    color: #ffffff !important;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.service-feature-card h4::before {
+    content: '';
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background: #a855f7; 
+    border-radius: 50%;
+}
+
+.service-feature-card ul {
+    color: #cbd5e1 !important; 
+    padding-left: 10px;
+    line-height: 1.7;
+    list-style-type: none; 
+}
+
+.service-feature-card ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    color: #e2e8f0 !important; 
+}
+
+.service-feature-card ul li::before {
+    content: '→'; 
+    position: absolute;
+    left: 0;
+    color: #a855f7; 
+    font-size: 0.9rem;
 }
