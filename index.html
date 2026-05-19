@@ -14,7 +14,11 @@
     </div>
 
     <header class="main-nav">
-        <div class="logo"><a href="index.html">IT YNR</a></div>
+        <div class="logo">
+            <a href="index.html">
+                <img src="ITYNRlogo.png" alt="IT YNR" style="width: 300px; max-width: 100%; height: auto;">
+            </a>
+        </div>
         <nav>
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
@@ -25,19 +29,28 @@
         </nav>
     </header>
 
-    <section class="hero" style="padding: 180px 5% 100px; text-align: center; min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-        <span style="color: var(--blue); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px;" class="reveal">Innovation & Excellence</span>
+   <section class="hero" style="position: relative; padding: 180px 5% 120px; min-height: 85vh; display: flex; align-items: center; overflow: hidden;">
         
-        <h1 class="text-gradient reveal" style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 30px; max-width: 1100px;">
-            Redefining Business Performance through Digital Transformation & Smart Technology
-        </h1>
-        
-        <p class="reveal" style="font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin-bottom: 50px;">
-            Empowering organizations with end-to-end IT consulting, SAP solutions, enterprise automation, and data-driven digital transformation to improve efficiency, scalability, and business performance.
-        </p>
-        
-        <div class="reveal">
-            <a href="services.html" class="btn-premium">Explore Services</a>
+        <div class="container" style="max-width: 1200px; margin: 0 auto; width: 100%; position: relative; z-index: 2;">
+            
+            <div class="hero-text-content" style="max-width: 800px;">
+                <span style="color: var(--navy); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; display: block;" class="reveal">
+                    Innovation & Excellence
+                </span>
+                
+                <h1 style="font-size: clamp(2.5rem, 5vw, 4.2rem); line-height: 1.1; font-weight: 800; color: var(--navy); margin-bottom: 30px; letter-spacing: -1px;" class="reveal">
+                    Redefining Business Performance through <span class="text-gradient">Digital Transformation</span> & Smart Technology
+                </h1>
+                
+                <p class="reveal" style="font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; line-height: 1.7; max-width: 650px;">
+                    Empowering organizations with end-to-end IT consulting, SAP solutions, enterprise automation, and data-driven digital transformation to improve efficiency, scalability, and business performance.
+                </p>
+                
+                <div class="reveal">
+                    <a href="services.html" class="btn-premium">Explore Services</a>
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -49,7 +62,7 @@
             </p>
         </div>
     </section>
-
+    <br>
     <section style="padding: 100px 0; overflow: hidden;" class="reveal">
         <div style="text-align: center; margin-bottom: 60px;">
             <h2 style="font-size: 2.5rem; color: var(--navy);">Our Services</h2>
@@ -62,129 +75,182 @@
                 <h3 class="text-gradient" style="font-size: 2rem;">IT YNR<br>Capabilities</h3>
             </div>
 
-            <div class="orbit-card">
-                <span style="font-size: 2rem; display: block; margin-bottom: 10px;">🧠</span>
-                <h4 style="color: var(--navy); margin-bottom: 10px;">AI & Intelligent Solutions</h4>
+            <div class="orbit-card" style="padding: 0; overflow: hidden; height: 220px; width: 220px; display: flex; flex-direction: column; justify-content: flex-end; background: url('ai.jpg') center/cover no-repeat;">
+                <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(5px); padding: 15px 10px; width: 100%; text-align: center; border-top: 1px solid rgba(255,255,255,0.3);">
+                    <h4 style="color: var(--navy); font-size: 0.95rem; font-weight: 800; margin: 0;">AI & Intelligent Solutions</h4>
+                </div>
             </div>
 
-            <div class="orbit-card">
-                <span style="font-size: 2rem; display: block; margin-bottom: 10px;">⚙️</span>
-                <h4 style="color: var(--navy); margin-bottom: 10px;">Application Development & Automation</h4>
+            <div class="orbit-card" style="padding: 0; overflow: hidden; height: 220px; width: 220px; display: flex; flex-direction: column; justify-content: flex-end; background: url('applicationdev.png') center/cover no-repeat;">
+                <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(5px); padding: 15px 10px; width: 100%; text-align: center; border-top: 1px solid rgba(255,255,255,0.3);">
+                    <h4 style="color: var(--navy); font-size: 0.95rem; font-weight: 800; margin: 0;">Application Development & Automation</h4>
+                </div>
             </div>
 
-            <div class="orbit-card">
-                <span style="font-size: 2rem; display: block; margin-bottom: 10px;">📊</span>
-                <h4 style="color: var(--navy); margin-bottom: 10px;">Data & Analytics</h4>
+            <div class="orbit-card" style="padding: 0; overflow: hidden; height: 220px; width: 220px; display: flex; flex-direction: column; justify-content: flex-end; background: url('data%20anakytics%20.jpeg') center/cover no-repeat;">
+                <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(5px); padding: 15px 10px; width: 100%; text-align: center; border-top: 1px solid rgba(255,255,255,0.3);">
+                    <h4 style="color: var(--navy); font-size: 0.95rem; font-weight: 800; margin: 0;">Data & Analytics</h4>
+                </div>
             </div>
 
-            <div class="orbit-card">
-                <span style="font-size: 2rem; display: block; margin-bottom: 10px;">🧩</span>
-                <h4 style="color: var(--navy); margin-bottom: 10px;">SAP Solutions</h4>
+            <div class="orbit-card" style="padding: 0; overflow: hidden; height: 220px; width: 220px; display: flex; flex-direction: column; justify-content: flex-end; background: url('sap.jpg') center/cover no-repeat;">
+                <div style="background: rgba(255, 255, 255, 0.85); backdrop-filter: blur(5px); padding: 15px 10px; width: 100%; text-align: center; border-top: 1px solid rgba(255,255,255,0.3);">
+                    <h4 style="color: var(--navy); font-size: 0.95rem; font-weight: 800; margin: 0;">SAP Solutions</h4>
+                </div>
             </div>
+
         </div>
     </section>
 
+    <section class="why-choose-us-final" id="why-us" style="width: 100%; padding: 100px 0; clear: both; overflow: hidden; position: relative; z-index: 10;">
+        
+        <div style="max-width: 1400px; margin: 0 auto; padding: 0 5%; display: flex; flex-wrap: wrap; justify-content: center; gap: 60px; align-items: center;">            
+            
+            <div class="reveal" style="flex: 1 1 500px; max-width: 600px; text-align: left;">
+                <h2 style="font-size: clamp(2.5rem, 4vw, 3.5rem); font-weight: 800; color: #0f172a; line-height: 1.1; margin: 0 0 30px 0;">
+                    Why Choose Us?
+                </h2>
+                
+                <div style="width: 100%; height: 420px; border-radius: 24px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); border: 1px solid #f1f5f9;">
+                    <img src="whychooseus.jpg" alt="Why Choose IT YNR" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+            </div>
+
+            <div style="flex: 1 1 500px; max-width: 600px; display: flex; flex-direction: column; gap: 20px;">
+                
+                <div class="ref-card reveal" style="display: flex; align-items: center; gap: 20px; padding: 25px; background: #f8fafc; border-radius: 12px; border: 1px solid #f1f5f9;">
+                    <div style="min-width: 50px; height: 50px; border-radius: 50%; background: #8cc63f; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-size: 1.5rem; color: white;">💡</span>
+                    </div>
+                    
+                    <div>
+                        <h4 style="color: #0f172a; font-size: 1.2rem; font-weight: 800; margin: 0 0 5px 0;">Deep Domain Expertise</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin: 0; line-height: 1.5;">in IT consulting, SAP solutions, and enterprise technologies</p>
+                    </div>
+                </div>
+
+                <div class="ref-card reveal" style="display: flex; align-items: center; gap: 20px; padding: 25px; background: #f8fafc; border-radius: 12px; border: 1px solid #f1f5f9;">
+                    <div style="min-width: 50px; height: 50px; border-radius: 50%; background: #8cc63f; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-size: 1.5rem; color: white;">📈</span>
+                    </div>
+                    <div>
+                        <h4 style="color: #0f172a; font-size: 1.2rem; font-weight: 800; margin: 0 0 5px 0;">Scalable & Future-Ready Solutions</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin: 0; line-height: 1.5;">designed to support business growth and expansion</p>
+                    </div>
+                </div>
+
+                <div class="ref-card reveal" style="display: flex; align-items: center; gap: 20px; padding: 25px; background: #f8fafc; border-radius: 12px; border: 1px solid #f1f5f9;">
+                    <div style="min-width: 50px; height: 50px; border-radius: 50%; background: #8cc63f; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-size: 1.5rem; color: white;">🤝</span>
+                    </div>
+                    <div>
+                        <h4 style="color: #0f172a; font-size: 1.2rem; font-weight: 800; margin: 0 0 5px 0;">Client-Centric Approach</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin: 0; line-height: 1.5;">focused on delivering customized, result-driven outcomes</p>
+                    </div>
+                </div>
+
+                <div class="ref-card reveal" style="display: flex; align-items: center; gap: 20px; padding: 25px; background: #f8fafc; border-radius: 12px; border: 1px solid #f1f5f9;">
+                    <div style="min-width: 50px; height: 50px; border-radius: 50%; background: #8cc63f; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <span style="font-size: 1.5rem; color: white;">🔄</span>
+                    </div>
+                    <div>
+                        <h4 style="color: #0f172a; font-size: 1.2rem; font-weight: 800; margin: 0 0 5px 0;">End-to-End IT Services</h4>
+                        <p style="color: #64748b; font-size: 0.95rem; margin: 0; line-height: 1.5;">from strategy and implementation to support and optimization</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
     <section style="padding: 100px 5%; max-width: 1400px; margin: 0 auto;">
         <div style="text-align: center; margin-bottom: 60px;" class="reveal">
-            <h2 style="font-size: 2.5rem; color: var(--navy);">Why Choose Us</h2>
+            <h2 style="font-size: 2.5rem; color: var(--navy);">Our Group Companies</h2>
+            <p style="color: var(--); font-size: 1.2rem; font-weight: 600; margin-top: 15px;">IT YNR, Parth Infotech, APX Technology, PN Automation</p>
+            <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">We are supported by a strong network of specialized companies, enabling us to deliver end-to-end solutions across IT, SAP, automation, and IoT.</p>
         </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; max-width: 1400px; margin: 0 auto;">
         
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-            <div class="glass-card reveal">
-                <span style="font-size: 2rem; display: block; margin-bottom: 15px;">💡</span>
-                <h4 style="color: var(--navy); font-size: 1.2rem; margin-bottom: 10px;">Deep Domain Expertise</h4>
-                <p style="color: var(--text-muted);">in IT consulting, SAP solutions, and enterprise technologies</p>
-            </div>
+        <div class="glass-card-dark reveal" style="display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 20px; font-weight: 700;">APX Technology</h3>
+            <p style="margin-bottom: 25px; line-height: 1.7;">Focused on smart monitoring and IoT-based solutions, APX Technology develops systems that help businesses and agriculture sectors make better, data-driven decisions.</p>
             
-            <div class="glass-card reveal" style="transition-delay: 0.1s;">
-                <span style="font-size: 2rem; display: block; margin-bottom: 15px;">📈</span>
-                <h4 style="color: var(--navy); font-size: 1.2rem; margin-bottom: 10px;">Scalable & Future-Ready Solutions</h4>
-                <p style="color: var(--text-muted);">designed to support business growth and expansion</p>
-            </div>
+            <h4 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 700;">Key offerings:</h4>
+            <ul style="padding-left: 20px; margin-bottom: 30px; line-height: 1.6;">
+                <li style="margin-bottom: 10px;">Smart Weather Stations and environmental monitoring systems</li>
+                <li style="margin-bottom: 10px;">Soil moisture and precision agriculture solutions</li>
+                <li style="margin-bottom: 10px;">IoT-based automation and real-time data tracking</li>
+            </ul>
             
-            <div class="glass-card reveal" style="transition-delay: 0.2s;">
-                <span style="font-size: 2rem; display: block; margin-bottom: 15px;">🤝</span>
-                <h4 style="color: var(--navy); font-size: 1.2rem; margin-bottom: 10px;">Client-Centric Approach</h4>
-                <p style="color: var(--text-muted);">focused on delivering customized, result-driven outcomes</p>
-            </div>
-            
-            <div class="glass-card reveal" style="transition-delay: 0.3s;">
-                <span style="font-size: 2rem; display: block; margin-bottom: 15px;">🔄</span>
-                <h4 style="color: var(--navy); font-size: 1.2rem; margin-bottom: 10px;">End-to-End IT Services</h4>
-                <p style="color: var(--text-muted);">from strategy and implementation to support and optimization</p>
-            </div>
+            <p style="margin-top: auto; line-height: 1.7;">Their solutions are designed to improve efficiency, reduce manual effort, and support smart and sustainable operations.</p>
         </div>
+
+        <div class="glass-card-dark reveal" style="transition-delay: 0.1s; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 20px; font-weight: 700;">Parth Infotech</h3>
+            <p style="margin-bottom: 25px; line-height: 1.7;">Established in 2000, Parth Infotech is a global IT solutions provider offering enterprise software, SAP services, and custom development solutions.</p>
+            
+            <h4 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 700;">Expertise:</h4>
+            <ul style="padding-left: 20px; margin-bottom: 30px; line-height: 1.6;">
+                <li style="margin-bottom: 10px;">SAP S/4HANA and enterprise solutions</li>
+                <li style="margin-bottom: 10px;">Custom software, web, and mobile application development</li>
+                <li style="margin-bottom: 10px;">Cloud solutions (AWS, Azure, GCP) and system integration</li>
+                <li style="margin-bottom: 10px;">IoT-based agriculture solutions and precision irrigation</li>
+            </ul>
+            
+            <p style="margin-top: auto; line-height: 1.7;">They deliver scalable, cost-effective, and customized IT solutions to clients across industries worldwide.</p>
+        </div>
+
+        <div class="glass-card-dark reveal" style="transition-delay: 0.2s; display: flex; flex-direction: column;">
+            <h3 style="font-size: 1.8rem; margin-bottom: 20px; font-weight: 700;">Pn Automation</h3>
+            <p style="margin-bottom: 25px; line-height: 1.7;">Pn Automation is a technology-driven company specializing in software development, automation, and digital transformation solutions.</p>
+            
+            <h4 style="font-size: 1.1rem; margin-bottom: 15px; font-weight: 700;">Capabilities:</h4>
+            <ul style="padding-left: 20px; margin-bottom: 30px; line-height: 1.6;">
+                <li style="margin-bottom: 10px;">Custom software and mobile application development</li>
+                <li style="margin-bottom: 10px;">Artificial Intelligence (AI) and automation solutions</li>
+                <li style="margin-bottom: 10px;">Cloud computing, cybersecurity, and system integration</li>
+                <li style="margin-bottom: 10px;">Data-driven solutions for enterprise and government projects</li>
+            </ul>
+            
+            <p style="margin-top: auto; line-height: 1.7;">They focus on building scalable, secure, and intelligent systems that turn data into actionable insights and business outcomes.</p>
+        </div>
+
+    </div>
     </section>
 
     <section style="padding: 60px 5%; text-align: center;" class="reveal">
         <h2 style="font-size: 2rem; color: var(--navy); margin-bottom: 40px;">Trusted by Leading Organizations</h2>
-        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.5;">
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Logo</div>
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Logo</div>
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Logo</div>
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Logo</div>
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Logo</div>
-        </div>
-    </section>
-
-    <section style="padding: 100px 5%; max-width: 1400px; margin: 0 auto;">
-        <div style="text-align: center; margin-bottom: 60px;" class="reveal">
-            <h2 style="font-size: 2.5rem; color: var(--navy);">Our Group Companies</h2>
-            <p style="color: var(--navy); font-size: 1.2rem; font-weight: 600; margin-top: 15px;">IT YNR, Parth Infotech, APX Technology, PN Automation</p>
-            <p style="color: var(--text-muted); font-size: 1.1rem; margin-top: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">We are supported by a strong network of specialized companies, enabling us to deliver end-to-end solutions across IT, SAP, automation, and IoT.</p>
-        </div>
-
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+        
+        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 1; align-items: center;">
             
-            <div class="glass-card reveal">
-                <h3 class="text-gradient" style="font-size: 1.8rem; margin-bottom: 15px;">APX Technology</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">Focused on smart monitoring and IoT-based solutions, APX Technology develops systems that help businesses and agriculture sectors make better, data-driven decisions.</p>
-                <h5 style="color: var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Key offerings:</h5>
-                <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
-                    <li>Smart Weather Stations and environmental monitoring systems</li>
-                    <li>Soil moisture and precision agriculture solutions</li>
-                    <li>IoT-based automation and real-time data tracking</li>
-                </ul>
-                <p style="color: var(--text-muted); font-weight: 600;">Their solutions are designed to improve efficiency, reduce manual effort, and support smart and sustainable operations.</p>
+            <div style="width: 150px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <img src="tata.png" alt="Tata" style="max-width: 100%; max-height: 100%; object-fit: contain;">
             </div>
 
-            <div class="glass-card reveal">
-                <h3 class="text-gradient" style="font-size: 1.8rem; margin-bottom: 15px;">Parth Infotech</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">Established in 2000, Parth Infotech is a global IT solutions provider offering enterprise software, SAP services, and custom development solutions.</p>
-                <h5 style="color: var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Expertise:</h5>
-                <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
-                    <li>SAP S/4HANA and enterprise solutions</li>
-                    <li>Custom software, web, and mobile application development</li>
-                    <li>Cloud solutions (AWS, Azure, GCP) and system integration</li>
-                    <li>IoT-based agriculture solutions and precision irrigation</li>
-                </ul>
-                <p style="color: var(--text-muted); font-weight: 600;">They deliver scalable, cost-effective, and customized IT solutions to clients across industries worldwide.</p>
+            <div style="width: 150px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <img src="j%20logo.png" alt="J Logo" style="max-width: 100%; max-height: 100%; object-fit: contain;">
             </div>
 
-            <div class="glass-card reveal">
-                <h3 class="text-gradient" style="font-size: 1.8rem; margin-bottom: 15px;">Pn Automation</h3>
-                <p style="color: var(--text-muted); margin-bottom: 20px;">Pn Automation is a technology-driven company specializing in software development, automation, and digital transformation solutions.</p>
-                <h5 style="color: var(--navy); margin-bottom: 10px; font-size: 1.1rem;">Capabilities:</h5>
-                <ul style="color: var(--text-muted); padding-left: 20px; margin-bottom: 20px; line-height: 1.6;">
-                    <li>Custom software and mobile application development</li>
-                    <li>Artificial Intelligence (AI) and automation solutions</li>
-                    <li>Cloud computing, cybersecurity, and system integration</li>
-                    <li>Data-driven solutions for enterprise and government projects</li>
-                </ul>
-                <p style="color: var(--text-muted); font-weight: 600;">They focus on building scalable, secure, and intelligent systems that turn data into actionable insights and business outcomes.</p>
+            <div style="width: 150px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <img src="delaware%20image.png" alt="Delaware" style="max-width: 100%; max-height: 100%; object-fit: contain;">
             </div>
 
-        </div>
-    </section>
+            <div style="width: 150px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <img src="gulf%20cement%20company%20logo.jpeg" alt="Gulf Cement Company" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
 
-    <section style="padding: 60px 5%; text-align: center; background: rgba(255,255,255,0.5);" class="reveal">
-        <h2 style="font-size: 2rem; color: var(--navy); margin-bottom: 40px;">Our Valuable Clients</h2>
-        <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; opacity: 0.5;">
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Client Logo</div>
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Client Logo</div>
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Client Logo</div>
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Client Logo</div>
-            <div style="width: 120px; height: 60px; background: rgba(15,23,42,0.1); border-radius: 8px; display: flex; align-items: center; justify-content: center;">Client Logo</div>
+            <div style="width: 150px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <img src="expound.png" alt="Expound" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+
+            <div style="width: 150px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <img src="swadarshan%20-logo.png" alt="Swadarshan" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+
+            <div style="width: 150px; height: 80px; display: flex; align-items: center; justify-content: center;">
+                <img src="aclogo.png" alt="AC" style="max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+
         </div>
     </section>
 
